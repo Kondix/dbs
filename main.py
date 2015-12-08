@@ -19,10 +19,9 @@ for b in m_clusters:
     for a in b:
         print(a.x, " ", a.y, " ", a.r)
 print("NOISE---------------------")
-for b in m_clusters:
-    for a in b:
-        if a.is_noise:
-            print(a.x, " ", a.y, " ", a.r)
+for a in m_gather:
+    if a.is_noise:
+        print(a.x, " ", a.y, " ", a.r)
 
 print("\n\n**********TEST************")
 suite = unittest.TestLoader().loadTestsFromTestCase(TestDBScan)

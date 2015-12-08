@@ -44,3 +44,10 @@ def DBSCAN(eps, MinPts, p_gather):
         else:
             clusterCnt += 1
             expandCluster(p, neighb_points, clusterCnt, eps, MinPts, p_gather)
+    clearNoise(p_gather)
+
+
+def clearNoise(p_gather):
+    for p in p_gather:
+        if p.is_member == 1:
+            p.is_noise = 0
